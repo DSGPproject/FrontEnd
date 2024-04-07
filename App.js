@@ -3,6 +3,7 @@ const Stack = createStackNavigator();
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import SplashScreen from './Screens/SplashScreen';
 import HomeScreen from './Screens/HomeScreen';
 import ScanScreen from './Screens/ScanScreen';
 import ResultsScreen from './Screens/ResultsScreen';

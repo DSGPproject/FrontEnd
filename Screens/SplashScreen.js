@@ -1,30 +1,52 @@
 import React from 'react';
-import { View, Text, ImageBackground, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 
 const SplashScreen = () => {
   return (
-    <ImageBackground source={require('../assets/logo.png')} style={styles.backgroundImage}>
-      <View style={styles.container}>
-        <Text style={styles.logoText}>GreenGuard</Text>
+    <View style={[styles.container, { backgroundColor: '#0bce83' }]}>
+      <Image source={require('../assets/background.png')} style={styles.backgroundImage} />
+      <View style={styles.contentContainer}>
+        <View style={styles.logoContainer}>
+          <Image source={require('../assets/logo.png')} style={styles.logo} />
+          <Text style={styles.logoText}>GreenGuard</Text>
+        </View>
       </View>
-    </ImageBackground>
+    </View>
   );
 };
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
-  backgroundImage: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
-  },
   container: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
   },
+  backgroundImage: {
+    position: 'absolute',
+    width: windowWidth,
+    height: windowHeight,
+    resizeMode: 'cover',
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logoContainer: {
+    alignItems: 'center',
+  },
+  logo: {
+    width: windowWidth * 0.3,
+    height: windowWidth * 0.3,
+  },
   logoText: {
-    fontSize: 32,
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#ffffff',
-    marginTop: 20,
+    marginTop: 10,
   },
 });
 
