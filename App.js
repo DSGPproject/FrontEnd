@@ -9,8 +9,18 @@ import ResultsScreen from './Screens/ResultsScreen';
 import ChatScreen from './Screens/ChatScreen';
 
 const App = () => {
+  const [hideSplashScreen, setHideSplashScreen] = React.useState(false);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setHideSplashScreen(true);
+    }, 2000);
+  }, []);
+
+
   return (
     <NavigationContainer>
+      {hideSplashScreen ? (
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
@@ -33,6 +43,9 @@ const App = () => {
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
+    ) : (
+          <SplashScreen />
+        )}
     </NavigationContainer>
   );
 };
