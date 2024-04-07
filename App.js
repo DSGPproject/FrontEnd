@@ -15,7 +15,7 @@ const App = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setHideSplashScreen(true);
-    }, 2000);
+    }, 4000);
   }, []);
 
 

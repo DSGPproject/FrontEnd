@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
 
 const ChatScreen = ({ navigation }) => {
   const [messages, setMessages] = useState([]);
@@ -16,7 +16,7 @@ const ChatScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.backButton}>{'< Back'}</Text>
+          <Image source={require('./backbutton.png')} style={styles.backButton} />
         </TouchableOpacity>
         <Text style={styles.chatTitle}>Chatbot</Text>
         <View style={{ flex: 1 }} />
@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ccc',
   },
   backButton: {
-    fontSize: 16,
-    fontWeight: 'bold',
+    width: 20,
+    height: 20,
     marginLeft: 20,
   },
   chatTitle: {
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   sendButton: {
-    backgroundColor: '#007bff',
+    backgroundColor: '#0bce83',
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 20,
