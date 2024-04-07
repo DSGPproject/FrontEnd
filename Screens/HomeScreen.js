@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image  } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -16,10 +16,11 @@ const HomeScreen = ({ navigation }) => {
       <TouchableOpacity
         style={styles.chatBtn}
         onPress={() => navigation.navigate('ChatScreen')}>
-        <Text style={styles.buttonText}>Chat</Text>
-        <View style={styles.tooltip}>
-          <Text>Chat with support</Text>
-        </View>
+        <Image
+          style={styles.vectorIcon}
+          contentFit="cover"
+          source={require("../assets/botLogo.png")}
+        />
       </TouchableOpacity>
     </View>
   );
@@ -27,6 +28,7 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#F7FCF7',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -49,8 +51,12 @@ const styles = StyleSheet.create({
   boxText: {
     fontSize: 16,
   },
+  vectorIcon: {
+    width: 22,
+    height: 19,
+  },
   button: {
-    backgroundColor: '#007bff',
+    backgroundColor: '#0bce83',
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 8,
@@ -67,7 +73,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 50,
-    backgroundColor: '#FFE53B',
+    backgroundColor: '#0bce83',
     position: 'absolute',
     bottom: 20,
     right: 20,
