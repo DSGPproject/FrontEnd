@@ -38,6 +38,21 @@ const HomeScreen = ({ navigation }) => {
 </LinearGradient>
       
       <View style={styles.content}>
+      <Text style={styles.contentTitle}>
+        Get Started
+        </Text>
+        <Text style={styles.contentText}>
+        To get started, simply tap the "Start Scan" button above to begin scanning plant leaves or upload existing photos. Need assistance? Tap the chat button to chat with our knowledgeable bot.
+        </Text>
+        <TouchableOpacity
+          style={styles.scanbtn}
+          onPress={() => navigation.navigate('ScanScreen')}>
+          <Image
+            style={styles.vectorIcon}
+            contentFit="cover"
+            source={require("../assets/scan.png")}
+          />
+        </TouchableOpacity>
         <TouchableOpacity
           style={styles.chatBtn}
           onPress={() => navigation.navigate('ChatScreen')}>
@@ -84,8 +99,6 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   welcomeMessage: {
     fontSize: 24,
@@ -104,7 +117,7 @@ const styles = StyleSheet.create({
     fontSize: windowWidth * 0.05,
   },
   boxTitle: {
-    paddingLeft : '6%',
+    paddingLeft : windowWidth * 0.046,
     fontSize: windowWidth * 0.05,
     fontWeight: 'bold',
   },
@@ -113,7 +126,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   contentContainer: {
-    paddingLeft : '6%',
+    paddingLeft : windowWidth * 0.046,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -125,7 +138,7 @@ const styles = StyleSheet.create({
     marginRight: windowWidth * 0.02,
   },
   imageContainer: {
-    marginRight : '7%',
+    marginRight : windowWidth * 0.05,
     width: windowWidth * 0.2,
     height: windowWidth * 0.2,
   },
@@ -146,7 +159,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontSize: windowWidth * 0.05,
+    fontSize: windowWidth * 0.04,
     fontWeight: 'bold',
   },
   chatBtn: {
@@ -158,6 +171,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#0bce83',
     position: 'absolute',
     bottom: windowHeight * 0.05,
+    right: windowWidth * 0.05,
+    zIndex: 1,
+    elevation: 2,
+  },
+  scanbtn: {
+    width: windowWidth * 0.14,
+    height: windowWidth * 0.14,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: windowWidth * 0.07,
+    backgroundColor: '#0bce83',
+    position: 'absolute',
+    bottom: windowHeight * 0.14,
     right: windowWidth * 0.05,
     zIndex: 1,
     elevation: 2,
@@ -176,6 +202,19 @@ const styles = StyleSheet.create({
   chatBtnText: {
     fontSize: windowWidth * 0.04,
     color: '#fff',
+  },
+  contentTitle: {
+    paddingLeft: windowWidth * 0.08,
+    fontSize: windowWidth * 0.06,
+    fontWeight: 'bold',
+    marginBottom: windowHeight * 0.02,
+    marginTop: windowHeight * 0.02,
+  },
+  contentText: {
+    alignItems: 'center',
+    paddingLeft: windowWidth * 0.08,
+    paddingRight: windowWidth * 0.08,
+    marginBottom: windowHeight * 0.02,
   },
 });
 
