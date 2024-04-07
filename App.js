@@ -8,6 +8,7 @@ import HomeScreen from './Screens/HomeScreen';
 import ScanScreen from './Screens/ScanScreen';
 import ResultsScreen from './Screens/ResultsScreen';
 import ChatScreen from './Screens/ChatScreen';
+import Login from './Screens/Login';
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = React.useState(false);
@@ -22,7 +23,12 @@ const App = () => {
   return (
     <NavigationContainer>
       {hideSplashScreen ? (
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="Home"
           component={HomeScreen}

@@ -15,9 +15,6 @@ const ResultsScreen = ({ route }) => {
     "Practice crop rotation to reduce disease pressure"
   ];
 
-  const windowWidth = Dimensions.get('window').width;
-  const windowHeight = Dimensions.get('window').height;
-
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.imageContainer}>
@@ -42,6 +39,7 @@ const ResultsScreen = ({ route }) => {
 };
 
 const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
