@@ -19,7 +19,9 @@ const ChatScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image source={require('../assets/previous2.png')} style={styles.backButtonImage} />
         </TouchableOpacity>
+        <View style={styles.titleCenter}>
         <Text style={styles.chatTitle}>Chatbot</Text>
+        </View> 
       </View>
       <ScrollView style={styles.messagesContainer} contentContainerStyle={styles.messagesContent}>
         {messages.map((message, index) => (
@@ -52,6 +54,7 @@ const ChatScreen = ({ navigation }) => {
 };
 
 const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
@@ -60,8 +63,6 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
     paddingTop: windowWidth * 0.04,
     paddingBottom: windowWidth * 0.02,
   },
@@ -69,6 +70,7 @@ const styles = StyleSheet.create({
     width: windowWidth * 0.08,
     height: windowWidth * 0.08,
     marginRight: windowWidth * 0.04,
+    marginLeft: windowWidth * 0.04,
   },
   chatTitle: {
     fontSize: windowWidth * 0.05,
@@ -78,6 +80,11 @@ const styles = StyleSheet.create({
   messagesContainer: {
     flex: 1,
     paddingHorizontal: windowWidth * 0.05,
+  },
+  titleCenter: {
+    paddingLeft: windowWidth * 0.25,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   messagesContent: {
     flexGrow: 1,
@@ -105,6 +112,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     padding: windowWidth * 0.025,
   },
   input: {
@@ -113,7 +121,7 @@ const styles = StyleSheet.create({
     borderColor: '#0bce83',
     borderWidth: windowWidth * 0.003,
     paddingHorizontal: windowWidth * 0.05,
-    paddingVertical: windowWidth * 0.025,
+    paddingVertical: windowHeight* 0.009,
     flex: 1,
     backgroundColor: 'transparent',
   },

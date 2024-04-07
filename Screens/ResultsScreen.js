@@ -16,25 +16,28 @@ const ResultsScreen = ({ route }) => {
   ];
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image source={{ uri: photoUri }} style={styles.image} />
-      </View>
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Disease Name:</Text>
-        <Text style={styles.sectionContent}>{diseaseName}</Text>
-      </View>
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Description:</Text>
-        <Text style={styles.sectionContent}>{diseaseDescription}</Text>
-      </View>
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Solutions:</Text>
-        {solutions.map((solution, index) => (
-          <Text key={index} style={styles.sectionContent}>{`${index + 1}. ${solution}`}</Text>
-        ))}
-      </View>
-    </ScrollView>
+    <View Style={styles.container}>
+      <ScrollView>
+    <View style={styles.imageContainer}>
+      <Image source={{ uri: photoUri }} style={styles.image} />
+    </View>
+    <View style={styles.section}>
+      <Text style={styles.sectionTitle}>Disease Name:</Text>
+      <Text style={styles.sectionContent}>{diseaseName}</Text>
+    </View>
+    <View style={styles.section}>
+      <Text style={styles.sectionTitle}>Description:</Text>
+      <Text style={styles.sectionContent}>{diseaseDescription}</Text>
+    </View>
+    <View style={styles.section}>
+      <Text style={styles.sectionTitle}>Solutions:</Text>
+      {solutions.map((solution, index) => (
+        <Text key={index} style={styles.sectionContent}>{`${index + 1}. ${solution}`}</Text>
+      ))}
+    </View>
+  </ScrollView>
+  </View>
+    
   );
 };
 
@@ -45,8 +48,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#F7FCF7',
     alignItems: 'center',
-    paddingTop: windowWidth * 0.06, 
-    paddingBottom: windowWidth * 0.12,
   },
   imageContainer: {
     marginBottom: windowWidth * 0.06,
