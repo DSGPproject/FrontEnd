@@ -3,10 +3,10 @@ const Stack = createStackNavigator();
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from './HomeScreen';
-import ScanScreen from './ScanScreen';
-import ResultsScreen from './ResultsScreen';
-import ChatScreen from './ChatScreen';
+import HomeScreen from './Screens/HomeScreen';
+import ScanScreen from './Screens/ScanScreen';
+import ResultsScreen from './Screens/ResultsScreen';
+import ChatScreen from './Screens/ChatScreen';
 
 const App = () => {
   return (
