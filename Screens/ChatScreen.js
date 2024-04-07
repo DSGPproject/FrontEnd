@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Image, Dimensions } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const ChatScreen = ({ navigation }) => {
   const [messages, setMessages] = useState([]);
@@ -13,10 +14,10 @@ const ChatScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.backButton}>{'< Back'}</Text>
+          <Image source={require('../assets/previous.png')} style={styles.backButtonImage} />
         </TouchableOpacity>
         <Text style={styles.chatTitle}>Chatbot</Text>
         <View style={{ flex: 1 }} />
@@ -47,46 +48,50 @@ const ChatScreen = ({ navigation }) => {
           <Image source={require('../assets/sendButton.png')} style={styles.sendButtonImage} />
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#F7FCF7',
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 20,
+    paddingVertical: windowHeight * 0.02,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
   },
-  backButton: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginLeft: 20,
+  backButtonImage: {
+    width: windowWidth * 0.08,
+    height: windowWidth * 0.08,
+    marginLeft: windowWidth * 0.04,
   },
   chatTitle: {
-    fontSize: 20,
+    fontSize: windowWidth * 0.05,
     fontWeight: 'bold',
-    flex: 1,
     textAlign: 'center',
+    flex: 1,
   },
   messagesContainer: {
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: windowWidth * 0.05,
   },
   messagesContent: {
     flexGrow: 1,
     justifyContent: 'flex-end',
   },
   message: {
-    maxWidth: '70%',
-    padding: 10,
-    borderRadius: 10,
-    marginBottom: 10,
+    maxWidth: windowWidth * 0.7,
+    padding: windowWidth * 0.025,
+    borderRadius: windowWidth * 0.02,
+    marginBottom: windowWidth * 0.025,
   },
   userMessage: {
     alignSelf: 'flex-end',
@@ -99,32 +104,31 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   messageText: {
-    fontSize: 16,
+    fontSize: windowWidth * 0.035,
   },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     borderTopWidth: 1,
     borderTopColor: '#ccc',
-    padding: 10,
+    padding: windowWidth * 0.025,
   },
   input: {
-    borderRadius: 20,
+    borderRadius: windowWidth * 0.03,
     borderStyle: "solid",
     borderColor: '#0bce83',
-    borderWidth: 1.5,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+    borderWidth: windowWidth * 0.003,
+    paddingHorizontal: windowWidth * 0.05,
+    paddingVertical: windowWidth * 0.025,
     flex: 1,
     backgroundColor: 'transparent',
   },
   sendButton: {
-    borderRadius: 10,
-    padding: 10,
+    padding: windowWidth * 0.025,
   },
   sendButtonImage: {
-    width: 40,
-    height: 40,
+    width: windowWidth * 0.1,
+    height: windowWidth * 0.1,
     resizeMode: 'contain',
   },
 });
