@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image  } from 'react-native';
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.welcomeMessage}>Welcome!</Text>
+      <Text style={styles.welcomeMessage}>Welcome to GreenGuard!</Text>
       <View style={styles.box}>
         <Text style={styles.boxText}>Take a photo or upload a photo</Text>
       </View>
@@ -38,11 +38,14 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    position: 'absolute',
+    top: '7%',
+    left: '7%',
   },
   box: {
     width: '80%',
-    height: 150,
-    backgroundColor: '#f0f0f0',
+    height: '20%',
+    backgroundColor: '#F7FCF7',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
