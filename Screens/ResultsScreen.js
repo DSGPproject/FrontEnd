@@ -7,20 +7,10 @@ import {
   StyleSheet,
   Dimensions,
   ActivityIndicator,
+  TouchableOpacity,
 } from "react-native";
 import useFetchData from "../services/apiService";
 import { useState, useEffect } from "react";
-
-import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Dimensions,
-  TouchableOpacity,
-} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 const ResultsScreen = ({ route, navigation }) => {
