@@ -20,7 +20,6 @@ const ChatScreen = ({ navigation }) => {
           <Image source={require('../assets/previous.png')} style={styles.backButtonImage} />
         </TouchableOpacity>
         <Text style={styles.chatTitle}>Chatbot</Text>
-        <View style={{ flex: 1 }} />
       </View>
       <ScrollView style={styles.messagesContainer} contentContainerStyle={styles.messagesContent}>
         {messages.map((message, index) => (
@@ -53,7 +52,6 @@ const ChatScreen = ({ navigation }) => {
 };
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
@@ -64,20 +62,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: windowHeight * 0.02,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    paddingTop: windowWidth * 0.04,
+    paddingBottom: windowWidth * 0.02,
   },
   backButtonImage: {
     width: windowWidth * 0.08,
     height: windowWidth * 0.08,
-    marginLeft: windowWidth * 0.04,
+    marginRight: windowWidth * 0.04,
   },
   chatTitle: {
     fontSize: windowWidth * 0.05,
     fontWeight: 'bold',
     textAlign: 'center',
-    flex: 1,
   },
   messagesContainer: {
     flex: 1,
@@ -95,7 +91,7 @@ const styles = StyleSheet.create({
   },
   userMessage: {
     alignSelf: 'flex-end',
-    backgroundColor: '#007bff',
+    backgroundColor: '#0bce83',
     color: '#fff',
   },
   botMessage: {
@@ -109,8 +105,6 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderTopWidth: 1,
-    borderTopColor: '#ccc',
     padding: windowWidth * 0.025,
   },
   input: {

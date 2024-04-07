@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "GreenGuard",
-    "slug": "GreenGuard",
+    "name": "greenguard",
+    "slug": "greenguard",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
