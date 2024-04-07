@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, Image, ScrollView, StyleSheet, Dimensions } from 'react-native';
 
 const ResultsScreen = ({ route }) => {
   const { photoUri } = route.params;
@@ -14,6 +14,9 @@ const ResultsScreen = ({ route }) => {
     "Maintain good air circulation around plants",
     "Practice crop rotation to reduce disease pressure"
   ];
+
+  const windowWidth = Dimensions.get('window').width;
+  const windowHeight = Dimensions.get('window').height;
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -38,32 +41,39 @@ const ResultsScreen = ({ route }) => {
   );
 };
 
+const windowWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
+    backgroundColor: '#F7FCF7',
     alignItems: 'center',
-    paddingVertical: 20,
+    paddingTop: windowWidth * 0.06, 
+    paddingBottom: windowWidth * 0.12,
   },
   imageContainer: {
-    marginBottom: 20,
+    marginBottom: windowWidth * 0.06,
+    width: windowWidth * 0.9,
+    alignSelf: 'center',
   },
   image: {
-    width: 300,
-    height: 300,
+    width: '100%',
+    height: windowWidth * 0.4,
     resizeMode: 'cover',
-    borderRadius: 10,
+    borderRadius: windowWidth * 0.06,
   },
   section: {
-    marginBottom: 20,
-    paddingHorizontal: 20,
+    marginBottom: windowWidth * 0.06,
+    paddingHorizontal: windowWidth * 0.06,
+    width: windowWidth * 0.9,
+    alignSelf: 'center',
   },
   sectionTitle: {
-    fontSize: 20,
+    fontSize: windowWidth * 0.06,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: windowWidth * 0.06,
   },
   sectionContent: {
-    fontSize: 16,
+    fontSize: windowWidth * 0.04,
   },
 });
 

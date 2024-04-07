@@ -54,7 +54,7 @@ const ScanScreen = ({ navigation }) => {
   };
 
   const handleDiagnose = () => {
-    if (photoUri) {
+    if (!photoUri) {
       navigation.navigate('ResultsScreen', { photoUri });
     } else {
       Alert.alert('No Photo', 'Please upload or take a photo first.');
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
   },
   backButton: {
     position: 'absolute',
-    top: windowWidth * 0.1, // Adjust according to the notch height
+    top: windowWidth * 0.1,
     left: windowWidth * 0.05,
     zIndex: 1,
   },
