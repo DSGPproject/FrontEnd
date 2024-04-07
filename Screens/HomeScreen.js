@@ -14,35 +14,34 @@ const HomeScreen = ({ navigation }) => {
       </View>
         
       <LinearGradient
-  colors={["#b0ffcb", "#eae7e7"]}
-  style={[styles.box, { marginTop: -(windowHeight * 0.1) }]}
->
-  <View style={styles.topicContainer}>
-    <Text style={styles.boxTitle}>Diagnose a tea plant disease</Text>
-  </View>
-  <View style={styles.contentContainer}>
-    <Text style={styles.boxDescription}>Take a photo of the tea plant leaf or upload a photo to diagnose diseases
-    </Text>
-    <View style={styles.imageContainer}>
-      <Image
-        source={require("../assets/TeaPlant.png")}
-        style={styles.teaPlantImage}
-      />
-    </View>
-  </View>
-  <TouchableOpacity
+        colors={["#b0ffcb", "#eae7e7"]}
+        style={[styles.box, { marginTop: -(windowHeight * 0.1) }]}>
+
+        <View style={styles.topicContainer}>
+          <Text style={styles.boxTitle}>Diagnose a tea plant disease</Text>
+        </View>
+        <View style={styles.contentContainer}>
+          <Text style={styles.boxDescription}>Take a photo of the tea plant leaf or upload a photo to diagnose diseases</Text>
+          <View style={styles.imageContainer}>
+            <Image
+              source={require("../assets/TeaPlant.png")}
+              style={styles.teaPlantImage}
+            />
+          </View>
+        </View>
+        <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('ScanScreen')}>
           <Text style={styles.buttonText}>Start Scan</Text>
         </TouchableOpacity>
-</LinearGradient>
+      </LinearGradient>
       
       <View style={styles.content}>
-      <Text style={styles.contentTitle}>
-        Get Started
+        <Text style={styles.contentTitle}>
+          Get Started
         </Text>
         <Text style={styles.contentText}>
-        To get started, simply tap the "Start Scan" button above to begin scanning plant leaves or upload existing photos. Need assistance? Tap the chat button to chat with our knowledgeable bot.
+          To get started, simply tap the "Start Scan" button above to begin scanning plant leaves or upload existing photos. Need assistance? Tap the chat button to chat with our knowledgeable bot.
         </Text>
         <TouchableOpacity
           style={styles.scanbtn}
@@ -100,11 +99,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
   },
-  welcomeMessage: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: windowHeight * 0.02,
-  },
   box: {
     width: '80%',
     height: windowHeight * 0.25,
@@ -117,7 +111,7 @@ const styles = StyleSheet.create({
     fontSize: windowWidth * 0.05,
   },
   boxTitle: {
-    paddingLeft : windowWidth * 0.046,
+    paddingLeft: windowWidth * 0.046,
     fontSize: windowWidth * 0.05,
     fontWeight: 'bold',
   },
@@ -126,7 +120,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   contentContainer: {
-    paddingLeft : windowWidth * 0.046,
+    paddingLeft: windowWidth * 0.046,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -138,7 +132,7 @@ const styles = StyleSheet.create({
     marginRight: windowWidth * 0.02,
   },
   imageContainer: {
-    marginRight : windowWidth * 0.05,
+    marginRight: windowWidth * 0.05,
     width: windowWidth * 0.2,
     height: windowWidth * 0.2,
   },
@@ -187,21 +181,6 @@ const styles = StyleSheet.create({
     right: windowWidth * 0.05,
     zIndex: 1,
     elevation: 2,
-  },
-  tooltip: {
-    position: 'absolute',
-    top: -windowHeight * 0.08,
-    opacity: 0,
-    backgroundColor: 'rgb(255, 180, 82)',
-    color: 'white',
-    padding: windowWidth * 0.02,
-    borderRadius: windowWidth * 0.02,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  chatBtnText: {
-    fontSize: windowWidth * 0.04,
-    color: '#fff',
   },
   contentTitle: {
     paddingLeft: windowWidth * 0.08,
