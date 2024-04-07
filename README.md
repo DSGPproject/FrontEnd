@@ -1,13 +1,12 @@
-FrontEnd
+# FrontEnd
+# Recommended next steps:
+Note: Make sure you have installed native code dependencies [here](https://reactnative.dev/docs/environment-setup#installing-dependencies)
 
-Recommended next steps:
-Note: Make sure you have installed native code dependencies here
-
-To preview and run the project on your device:
-Open project folder in Visual Studio Code
-Run npm install in the terminal
-Run npx expo start in the terminal
-Run on For iOS device (only on MacOS)
-Press i to view on iOS simulator or follow the instructions here to run on a physical device.
-Run on For android device
-Press a to view on Android Virtual Device or follow the instructions here to run on a physical device.
+### To preview and run the project on your device:
+1. Open project folder in <u>Visual Studio Code</u>
+2. Run  `npm install`  in the terminal
+3. Run  `npx expo start`  in the terminal
+4. Run on For iOS device (only on MacOS)
+    1. Press  `i`  to view on iOS simulator or follow the instructions [here](https://docs.expo.dev/workflow/run-on-device/) to run on a physical device.
+5. Run on For android device
+    1. Press  `a`  to view on Android Virtual Device or follow the instructions [here](https://docs.expo.dev/workflow/run-on-device/) to run on a physical device.
