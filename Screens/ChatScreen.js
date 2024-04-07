@@ -16,7 +16,7 @@ const ChatScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Image source={require('./backbutton.png')} style={styles.backButton} />
+          <Text style={styles.backButton}>{'< Back'}</Text>
         </TouchableOpacity>
         <Text style={styles.chatTitle}>Chatbot</Text>
         <View style={{ flex: 1 }} />
@@ -38,12 +38,13 @@ const ChatScreen = ({ navigation }) => {
         <TextInput
           style={styles.input}
           placeholder="Type your message..."
+          placeholderTextColor="#0bce83"
           value={inputText}
           onChangeText={setInputText}
           multiline
         />
         <TouchableOpacity style={styles.sendButton} onPress={handleSendMessage}>
-          <Text style={styles.sendButtonText}>Send</Text>
+          <Image source={require('../assets/sendButton.png')} style={styles.sendButtonImage} />
         </TouchableOpacity>
       </View>
     </View>
@@ -63,8 +64,8 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ccc',
   },
   backButton: {
-    width: 20,
-    height: 20,
+    fontSize: 16,
+    fontWeight: 'bold',
     marginLeft: 20,
   },
   chatTitle: {
@@ -108,23 +109,23 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   input: {
+    borderRadius: 20,
+    borderStyle: "solid",
+    borderColor: '#0bce83',
+    borderWidth: 1.5,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
     flex: 1,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 10,
-    padding: 10,
-    marginRight: 10,
+    backgroundColor: 'transparent',
   },
   sendButton: {
-    backgroundColor: '#0bce83',
     borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    padding: 10,
   },
-  sendButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
+  sendButtonImage: {
+    width: 40,
+    height: 40,
+    resizeMode: 'contain',
   },
 });
 
