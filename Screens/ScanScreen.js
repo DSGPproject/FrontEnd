@@ -4,7 +4,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const ScanScreen = ({ navigation }) => {
-  const [photoUri, setPhotoUri] = useState(null);
+  const [photo, setPhoto] = useState(null);
 
   const handleUploadPhoto = async () => {
     try {
@@ -17,12 +17,12 @@ const ScanScreen = ({ navigation }) => {
       let result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
-        aspect: [4, 3],
+        aspect: [4, 4],
         quality: 1,
       });
 
       if (!result.cancelled) {
-        setPhotoUri(result.uri);
+        setPhoto(result);
       }
     } catch (error) {
       console.error('Error uploading photo:', error);
@@ -40,12 +40,12 @@ const ScanScreen = ({ navigation }) => {
 
       let result = await ImagePicker.launchCameraAsync({
         allowsEditing: true,
-        aspect: [4, 3],
+        aspect: [4, 4],
         quality: 1,
       });
 
       if (!result.cancelled) {
-        setPhotoUri(result.uri);
+        setPhoto(result);
       }
     } catch (error) {
       console.error('Error taking photo:', error);
@@ -54,10 +54,10 @@ const ScanScreen = ({ navigation }) => {
   };
 
   const handleDiagnose = () => {
-    if (!photoUri) {
-      navigation.navigate('ResultsScreen', { photoUri });
-    } else {
+    if (!photo) {
       Alert.alert('No Photo', 'Please upload or take a photo first.');
+    } else {
+      navigation.navigate('ResultsScreen', { photo });
     }
   };
 
@@ -102,8 +102,8 @@ const ScanScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={styles.imageContainer2}>
-            {photoUri && <Image source={{ uri: photoUri }} style={styles.uploadedImage} />}
-            {!photoUri && <Text style={styles.uploadText}>Upload a picture</Text>}
+            {photo && <Image source={{ uri: photo.uri }} style={styles.uploadedImage} />}
+            {!photo && <Text style={styles.uploadText}>Upload a picture</Text>}
           </View>
         <TouchableOpacity
           style={styles.diagnoseButton}
