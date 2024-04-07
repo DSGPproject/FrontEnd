@@ -13,6 +13,21 @@ const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
 const HomeScreen = ({ navigation }) => {
+  const handleLogout = () => {
+    Alert.alert("Logout", "Are you sure you want to logout?", [
+      {
+        text: "Cancel",
+        style: "cancel",
+      },
+      {
+        text: "Logout",
+        onPress: () => {
+          navigation.navigate("Login");
+        },
+      },
+    ]);
+  };
+
   return (
     <View style={styles.container}>
       <View
@@ -34,7 +49,7 @@ const HomeScreen = ({ navigation }) => {
         style={[styles.box, { marginTop: -(windowHeight * 0.1) }]}
       >
         <View style={styles.topicContainer}>
-          <Text style={styles.boxTitle}>Diagnose a tea plant disease</Text>
+          <Text style={styles.boxTitle}>Diagnose a Tea Plant disease</Text>
         </View>
         <View style={styles.contentContainer}>
           <Text style={styles.boxDescription}>
@@ -77,6 +92,17 @@ const HomeScreen = ({ navigation }) => {
         <Text style={styles.contentText}>
           4. Wait for the analysis results to appear.
         </Text>
+
+        <TouchableOpacity style={styles.logoutbtn} onPress={handleLogout}>
+          <View style={styles.logoutContent}>
+            <Text style={styles.logoutText}>Logout</Text>
+            <Image
+              style={styles.vectorIcon}
+              source={require("../assets/logout.png")}
+            />
+          </View>
+        </TouchableOpacity>
+
         <TouchableOpacity
           style={styles.scanbtn}
           onPress={() => navigation.navigate("ScanScreen")}
@@ -217,6 +243,27 @@ const styles = StyleSheet.create({
     right: windowWidth * 0.05,
     zIndex: 1,
     elevation: 2,
+  },
+  logoutbtn: {
+    width: windowWidth * 0.3,
+    height: windowWidth * 0.08,
+    marginLeft: windowWidth * 0.08,
+    marginTop: windowWidth * 0.02,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 50,
+    backgroundColor: "#F70000",
+    zIndex: 1,
+    elevation: 2,
+  },
+  logoutContent: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  logoutText: {
+    fontWeight: "bold",
+    color: "#fff",
+    marginRight: 5,
   },
   contentTitle: {
     paddingLeft: windowWidth * 0.08,

@@ -11,7 +11,19 @@ import {
 import useFetchData from "../services/apiService";
 import { useState, useEffect } from "react";
 
-const ResultsScreen = ({ route }) => {
+import React from "react";
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+
+const ResultsScreen = ({ route, navigation }) => {
   const { photoUri } = route.params;
   const [fetchData, setFetchData] = useState();
   const [loading, setLoading] = useState(false);
@@ -36,7 +48,6 @@ const ResultsScreen = ({ route }) => {
     setFetchData(true);
   }, []);
 
-  // Mock data for disease name, description, and solutions
   const diseaseName = "Tea Rust";
   const diseaseDescription =
     "Tea Rust is a common fungal disease affecting tea plants, caused by the fungus Hemileia vastatrix. It appears as orange-brown rust-like spots on the leaves, leading to reduced yield and quality.";

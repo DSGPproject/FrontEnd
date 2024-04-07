@@ -12,7 +12,7 @@ import * as ImagePicker from "expo-image-picker";
 import { LinearGradient } from "expo-linear-gradient";
 
 const ScanScreen = ({ navigation }) => {
-  const [photoUri, setPhotoUri] = useState(null);
+  const [photo, setPhoto] = useState(null);
 
   const handleUploadPhoto = async () => {
     try {
@@ -29,7 +29,7 @@ const ScanScreen = ({ navigation }) => {
       let result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
-        aspect: [4, 3],
+        aspect: [4, 4],
         quality: 1,
         base64: true,
       });
@@ -55,12 +55,12 @@ const ScanScreen = ({ navigation }) => {
 
       let result = await ImagePicker.launchCameraAsync({
         allowsEditing: true,
-        aspect: [4, 3],
+        aspect: [4, 4],
         quality: 1,
       });
 
       if (!result.cancelled) {
-        setPhotoUri(result.uri);
+        setPhoto(result);
       }
     } catch (error) {
       console.error("Error taking photo:", error);
