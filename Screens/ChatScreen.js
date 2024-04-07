@@ -17,7 +17,7 @@ const ChatScreen = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Image source={require('../assets/previous.png')} style={styles.backButtonImage} />
+          <Image source={require('../assets/previous2.png')} style={styles.backButtonImage} />
         </TouchableOpacity>
         <Text style={styles.chatTitle}>Chatbot</Text>
       </View>

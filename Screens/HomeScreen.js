@@ -43,6 +43,21 @@ const HomeScreen = ({ navigation }) => {
         <Text style={styles.contentText}>
           To get started, simply tap the "Start Scan" button above to begin scanning plant leaves or upload existing photos. Need assistance? Tap the chat button to chat with our knowledgeable bot.
         </Text>
+        <Text style={styles.contentTitle}>
+          Instructions
+        </Text>
+        <Text style={styles.contentText}>
+        1. Tap the "Start Scan" button to begin.
+        </Text>
+        <Text style={styles.contentText}>
+        2. Use your device's camera to capture clear photos of plant leaves.
+        </Text>
+        <Text style={styles.contentText}>
+        3. Ensure the leaf is well-lit and positioned in the center of the frame.
+        </Text>
+        <Text style={styles.contentText}>
+        4. Wait for the analysis results to appear.
+        </Text>
         <TouchableOpacity
           style={styles.scanbtn}
           onPress={() => navigation.navigate('ScanScreen')}>
@@ -51,6 +66,7 @@ const HomeScreen = ({ navigation }) => {
             contentFit="cover"
             source={require("../assets/scan.png")}
           />
+        
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.chatBtn}
