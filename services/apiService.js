@@ -1,15 +1,30 @@
 // Import Axios library
-const axios = require('axios');
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 // Function to fetch data from backend
-async function fetchData() {
+function useFetchData(fetchData, photoUri) {
+  const [leafResponse, setLeafResponse] = useState();
+  async function fetchLeafData() {
     try {
-        const response = await axios.get('http://localhost:3000/api/data'); // Replace the URL with your backend endpoint
-        return response.data; // Return the data received from backend
+      //IMPORTANT: Replace below with your own IP addresss
+      const response = await axios.post("http://192.168.1.4:3000/upload", {
+        photoUri,
+      }); // Replace the URL with your backend endpoint
+      setLeafResponse(response.data);
     } catch (error) {
-        console.error('Error fetching data:', error);
-        throw error; // Throw error for handling
+      console.error("Error fetching data:", error);
+      throw error; // Throw error for handling
     }
+  }
+
+  useEffect(() => {
+    if (fetchLeafData) {
+      fetchLeafData();
+    }
+  }, [fetchData]);
+
+  return leafResponse; // Return the data received from backend
 }
 
-module.exports = fetchData; // Export the function to be used elsewhere
+module.exports = useFetchData; // Export the function to be used elsewhere
