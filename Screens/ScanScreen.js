@@ -76,7 +76,7 @@ const ScanScreen = ({ navigation }) => {
         style={[styles.box, { marginTop: -(windowHeight * 0.1) }]}>
           
         <View style={[styles.topicContainer, { alignItems: 'center' }]}>
-          <Text style={styles.boxTitle}>Diagnose a tea plant disease</Text>
+          <Text style={styles.boxTitle}>Diagnose a Tea Plant disease</Text>
         </View>
         <View style={styles.contentContainer}>
           <Text style={styles.boxDescription}>Take a photo of the tea plant leaf or upload a photo to diagnose diseases</Text>
